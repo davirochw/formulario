@@ -1,0 +1,145 @@
+:root {
+    /* Cores */
+    --primary-color: #29B3FF;
+    --secondary-color: #09a6fa;
+    --bg-color: #35014B;
+    --text-color: #f0f0f0;
+    --light-color: rgba(255, 255, 255, 0.04);
+
+    /* Margens bottom */
+    --mb-0-25: .25rem;
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-25: 1.25rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+
+    --header-height: 3.2rem;
+
+    /* z index */
+    --z-tooltip: 10;
+    --z-fixed: 100;
+
+    /* tamanho de fonts */
+    --h2-font-size: 1.75rem;
+    --normal-font-size: 1rem;
+}
+
+@media screen and (max-width: 968px) {
+    :root {
+        --h2-font-size: 1.65rem;
+        --normal-font-size: .9rem;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Roboto", sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: var(--header-height) 0 0 0;
+    background-color: var(--bg-color);
+    font-size: var(--normal-font-size);
+    color: var(--text-color);
+}
+
+a {
+    text-decoration: none;
+}
+
+h2 {
+    font-size: var(--h2-font-size);
+    margin-bottom: var(--mb-1-5);
+}
+
+form {
+    background: rgba(255, 255, 255, 0.03);
+    width: 100%;
+    max-width: 500px;
+    margin: var(--mb-2) auto;
+    padding: var(--mb-2);
+    display: flex;
+    flex-direction: column;
+}
+
+input~label {
+    position: absolute;
+    top: var(--mb-1);
+    left: 0;
+    color: rgba(255, 255, 255, 0.329);
+    transition: .4s;
+}
+
+input:focus~label,
+input:valid~label {
+    transform: translateY(-24px);
+    font-size: 0.8em;
+    letter-spacing: 0.1em;
+}
+
+.input span.error {
+    display: flex;
+    padding: 0;
+    background-color: rgba(255, 0, 0, 0.2);
+}
+
+.input span.error.active {
+    border: 1px solid #f12424;
+    padding: 0.4em;
+}
+
+button.cadastrar {
+    background-color: var(--primary-color);
+}
+
+div.input {
+    margin-bottom: var(--mb-2);
+    position: relative;
+}
+
+input,
+button {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    padding: var(--mb-1) 0;
+    border: none;
+    border-bottom: 1px solid var(--primary-color);
+    background-color: transparent;
+    outline: none;
+    color: var(--text-color);
+    font-size: 1em;
+}
+
+button {
+    position: relative;
+    margin:  var(--mb-0-5);
+    width: 100%;
+    cursor: pointer;
+}
+
+.button {
+    display: flex;
+}
+
+button.cancelar {
+    border: 1px solid #f04a4a;
+}
+
+button.cancelar:hover {
+    color: #f04a4a;
+}
+
+button.cadastrar:hover {
+    background-color: var(--secondary-color);
+}
