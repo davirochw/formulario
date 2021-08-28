@@ -1,12 +1,13 @@
 :root {
-    /* Cores */
+    /* cores */
     --primary-color: #29B3FF;
     --secondary-color: #09a6fa;
     --bg-color: #35014B;
+    --bg-color-two: #300046;
     --text-color: #f0f0f0;
     --light-color: rgba(255, 255, 255, 0.04);
 
-    /* Margens bottom */
+    /* margens */
     --mb-0-25: .25rem;
     --mb-0-5: .5rem;
     --mb-0-75: .75rem;
@@ -34,6 +35,13 @@
     }
 }
 
+@media screen and (min-width: 412px) {
+    div .fullname {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -46,6 +54,8 @@ html {
 }
 
 body {
+    align-items: center;
+    justify-content: center;
     margin: var(--header-height) 0 0 0;
     background-color: var(--bg-color);
     font-size: var(--normal-font-size);
@@ -81,7 +91,7 @@ input~label {
 
 input:focus~label,
 input:valid~label {
-    transform: translateY(-24px);
+    transform: translateY(-20px);
     font-size: 0.8em;
     letter-spacing: 0.1em;
 }
@@ -106,6 +116,10 @@ div.input {
     position: relative;
 }
 
+input:focus{
+    background-color: var(--bg-color-two);
+}
+
 input,
 button {
     -moz-appearance: none;
@@ -123,7 +137,7 @@ button {
 
 button {
     position: relative;
-    margin:  var(--mb-0-5);
+    margin: var(--mb-0-5);
     width: 100%;
     cursor: pointer;
 }

@@ -12,6 +12,7 @@ function ValidateField(field) {
         return foundError;
     }
 
+    // Mensagens de error
     function customMessage(typeError) {
         const messages = {
             text: {
@@ -74,6 +75,7 @@ for (field of fields) {
     field.addEventListener("blur", customValidation)
 }
 
+// Por causa disso o formulário não será enviado
 document.querySelector("form")
     .addEventListener("submit", event => {
         event.preventDefault()
